@@ -1,41 +1,40 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Note from './Note'
 import './notepadmain.css'
 
 
-// const getLocalStorage = () => {
-//     let list = localStorage.getItem("list");
-//     if (list) {
-//       return (list = JSON.parse(localStorage.getItem("list")))
-//     } else {
-//       return [];
-//     }
-//   }
+const getLocalStorage = () => {
+    let noteList = localStorage.getItem("noteList");
+    if (noteList) {
+      return (noteList = JSON.parse(localStorage.getItem("noteList")))
+    } else {
+      return [];
+    }
+  }
   
   
 export default function NotePadMain() {
     const [noteInput, setnoteInput] = useState('')
-    const [newNote, setnewNote] = useState([]);
+    const [newNote, setnewNote] = useState(getLocalStorage());
     const [beginNote, setbeginNote] = useState(true)
     const [Edit, setEdit] = useState(null)
     // const [isEditing, setisEditing] = useState(true)
 
   
 
-    console.log(newNote)
-    console.log(noteInput)
-console.log(Edit)
+   
     function handleBeginNote() {
         setbeginNote(!beginNote);
     }
 
-    // useEffect(() => {
-    //     localStorage.setnewNote('list', JSON.stringify(item))
-    //   }, [item]);
+    useEffect(() => {
+        localStorage.setItem('noteList', JSON.stringify(newNote))
+      }, [newNote]);
     
     let place = 'Write Notes Here...'
+
     function handleNoteInput(event) {
         let noting = event.target.value;
         setnoteInput(noting)
