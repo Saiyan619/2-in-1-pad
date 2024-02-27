@@ -56,7 +56,6 @@ console.log(Edit)
         console.log(Edit)
             console.log(newNote)
         if (Edit) {
-            console.log('same')
             setnewNote((prevNotes) =>
     prevNotes.map((item, index) =>
       item === Edit ? noteInput : item
@@ -68,27 +67,22 @@ console.log(Edit)
   setnoteInput('')     
         }
         
-        else if(noteInput){
+        else if(noteInput && noteInput !== ''){
             setnewNote(prev => {
                 console.log('not same')
                 return [...prev, noteInput]
             })
             setnoteInput('')
-            }
+        }
+        else{alert('Invalid input (make sure the note isnt empty)')}
       
     }
 
     function handleEdit(id) {
         const newEdit = newNote.find((item,index) => index === id);
-        // setisEditing(true)
-        // setEdit(id)
-        // setnoteInput(newEdit.content)
-        // let text = no
         setnoteInput(newEdit)
         console.log(newEdit)
-        setEdit(newEdit)
-        // console.log(id)
-       
+        setEdit(newEdit)       
     }
 
     function delNote(id) {
@@ -105,7 +99,7 @@ console.log(Edit)
       <div className='note-main-container'>
           <Link to={'/'}>go to todo</Link>
       
-          <div >
+          <div>
           <div className='hero-text-con'>
  <h1>Niyi's Notepad</h1>
         <img src='./icon-sun.svg' alt='sun' />

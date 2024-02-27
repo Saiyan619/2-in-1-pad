@@ -33,7 +33,7 @@ export default function TodoMain() {
       })
       setinput('')
     } else {
-      console.log('wrong input')
+      alert('Wrong input, please type in a correct input')
     }
     
      ;
