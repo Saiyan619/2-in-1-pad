@@ -1,0 +1,22 @@
+
+.list-con{
+    background-color: rgb(32, 32, 32);
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 100px;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+}.list_active{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: line-through;
+    color: grey;
+}
+
+.delete-btn{
+    margin-right: 5px;
+}
