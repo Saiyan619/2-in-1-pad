@@ -101,7 +101,6 @@ export default function NotePadMain() {
           <div>
           <div className='hero-text-con'>
  <h1>Niyi's Notepad</h1>
-        <img src='./icon-sun.svg' alt='sun' />
       </div>
 
           <div onClick={handleBeginNote} className={beginNote ? 'new-task-con' : 'new-task-con_active'}><img src='./icons8-add-50.png' alt='add' /> <p>start writing</p></div>

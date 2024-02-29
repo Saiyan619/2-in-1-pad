@@ -61,7 +61,6 @@ export default function TodoMain() {
 
       <div className='hero-text-con'>
  <h1>Niyi's To-dos</h1>
-        <img src='./icon-sun.svg' alt='sun' />
       </div>
 
       <div className='sub-todo-con'>
